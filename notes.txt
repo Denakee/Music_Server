@@ -1,0 +1,38 @@
+Pull media from youtube with ffmpeg 
+ 
+Home Page will show queue list. 
+ 
+ 
+ 
+youtube-dl --extract-audio --audio-format mp3 <video URL> 
+ 
+From <http://askubuntu.com/questions/178481/how-to-download-an-mp3-track-from-a-youtube-video>  
+ 
+ 
+Download pip to install flask 
+ 
+Maybe try implementing with Flask? http://www.fullstackpython.com/flask.html 
+ 
+Parsing Youtube URL: http://stackoverflow.com/questions/4356538/how-can-i-extract-video-id-from-youtubes-link-in-python 
+ 
+import urlparse  
+ 
+url_data = urlparse.urlparse("http://www.youtube.com/watch?v=z_AbfPXTKms&NR=1") 
+query = urlparse.parse_qs(url_data.query)  
+video = query["v"][0] 
+ 
+ 
+MPD (linux) for music playing. 
+ 
+ 
+COMMAND LIST: 
+ 
+Sudo apt-get install 
+Python 
+Pip 
+Youtube-dl 
+Ffmpeg 
+ 
+Pip install 
+Flask 
+urlparse
