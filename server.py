@@ -1,8 +1,11 @@
 from flask import Flask
 from flask import request
 from flask import render_template
+from subprocess import call
 import urlparse
 import re
+
+MEDIA_DIR = "~/Music/"
 
 app = Flask ( __name__ )
 
@@ -30,13 +33,21 @@ def video_id(value):
 
 @app.route( '/' )
 def index ():
-	return render_template ( "header.html" ) + render_template ( "footer.html" )
+	return (render_template ( "header.html" ) + 
+		render_template ( "footer.html" ) 
+	       )
 
 @app.route( '/', methods=['POST'] )
 def get_mp3():
 	text = request.form['text']
 	youtube_id = video_id ( text )
-	return youtube_id
+	call("cd " + MEDIA_DIR + 
+		" && youtube-dl	--extract-audio --audio-format mp3 " + 
+			youtube_id + " &", shell=True)
+	return (render_template ( "header.html" ) + 
+		youtube_id + 
+		render_template ( "footer.html" ) 
+	       )
 
 if __name__ == '__main__':
 	app.debug = True
