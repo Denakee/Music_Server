@@ -30,9 +30,10 @@ COMMAND LIST:
 Sudo apt-get install 
 Python 
 Pip 
-Youtube-dl 
-Ffmpeg 
+Ffmpeg
+mpd 
  
 Pip install 
 Flask 
 urlparse
+youtube-dl

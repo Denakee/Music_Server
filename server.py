@@ -41,9 +41,7 @@ def index ():
 def get_mp3():
 	text = request.form['text']
 	youtube_id = video_id ( text )
-	call("cd " + MEDIA_DIR + 
-		" && youtube-dl	--extract-audio --audio-format mp3 " + 
-			youtube_id + " &", shell=True)
+	call("cd " + MEDIA_DIR + " && youtube-dl" + " --extract-audio --audio-format mp3 " + youtube_id + " &", shell=True)
 	return (render_template ( "header.html" ) + 
 		youtube_id + 
 		render_template ( "footer.html" ) 
