@@ -1,3 +1,16 @@
+* Server *
+Store users (MAC address?)
+Pull songs (Youtube and/or Spotify)
+
+*  View  *
+HTML front end.
+
+* Controller *
+Manages updates from website.
+ *Music Queue
+ *Songs in Database
+
+
 Pull media from youtube with ffmpeg 
  
 Home Page will show queue list. 
