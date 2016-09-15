@@ -29,6 +29,7 @@ Home Page will show queue list.
  
  
 youtube-dl --extract-audio --audio-format mp3 <video URL> 
+omxplayer --vol "-2700" <File Name>
  
 From <http://askubuntu.com/questions/178481/how-to-download-an-mp3-track-from-a-youtube-video>  
  

@@ -41,6 +41,7 @@ def index ():
 def start_mp3_dl():
 	text = request.form['text']
 	youtube_id = video_id ( text )
+	print "Downloading: ", youtube_id
 	dl_process = Popen("cd " + MEDIA_DIR + " && youtube-dl" + " --extract-audio --audio-format mp3 " + youtube_id + " &", shell=True)
 	return (render_template ( "header.html" ) + 
 		youtube_id + 
@@ -49,4 +50,4 @@ def start_mp3_dl():
 
 if __name__ == '__main__':
 	app.debug = True
-	app.run ();
+	app.run (host = '0.0.0.0');
