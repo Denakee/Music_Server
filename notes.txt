@@ -10,6 +10,17 @@ Manages updates from website.
  *Music Queue
  *Songs in Database
 
+* Admin *
+ *ban users
+ *
+
+* Users *
+ *Thumbs up/down voting
+ *
+
+Only 3 songs in the queue at a time per user.
+
+Voting system. 
 
 Pull media from youtube with ffmpeg 
  

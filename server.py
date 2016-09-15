@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import request
 from flask import render_template
-from subprocess import call
+from subprocess import Popen
 import urlparse
 import re
 
@@ -38,10 +38,10 @@ def index ():
 	       )
 
 @app.route( '/', methods=['POST'] )
-def get_mp3():
+def start_mp3_dl():
 	text = request.form['text']
 	youtube_id = video_id ( text )
-	call("cd " + MEDIA_DIR + " && youtube-dl" + " --extract-audio --audio-format mp3 " + youtube_id + " &", shell=True)
+	dl_process = Popen("cd " + MEDIA_DIR + " && youtube-dl" + " --extract-audio --audio-format mp3 " + youtube_id + " &", shell=True)
 	return (render_template ( "header.html" ) + 
 		youtube_id + 
 		render_template ( "footer.html" ) 
